@@ -159,6 +159,7 @@ class PDFBeads::PageDataProvider < Array
     private
 
     def writeImage( img,path,fmt )
+      q = @pageargs[:jpeg_quality]
       begin
         img.write( path ) do
           case fmt
@@ -167,7 +168,7 @@ class PDFBeads::PageDataProvider < Array
             self.define( 'JP2','numrlvls',4 )
             self.define( 'JP2','rate',0.015625 )
           when 'JPG'
-            self.quality = 50
+            self.quality = q
           else
             self.compression = ZipCompression
             self.quality = 95

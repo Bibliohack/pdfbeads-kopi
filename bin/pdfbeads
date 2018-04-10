@@ -55,6 +55,7 @@ pageargs = Hash[
   :bg_resolution   => 300,
   :bg_format       => 'JP2',
   :st_format       => 'JBIG2',
+  :jpeg_quality    => 50,
   :pages_per_dict  => 15,
   :force_update    => false,
   :force_grayscale => false
@@ -125,6 +126,11 @@ OptionParser.new() do |opts|
     else
       pageargs[:st_format] = 'G4'
     end
+  end
+  opts.on("-q", "--jpeg-compression VAL",
+                "JPEG quality (1..100)." ) do |q|
+    quality = q.to_i
+    pageargs[:jpeg_quality] = quality if ( (1..100).include? quality )
   end
   opts.on("-p", "--pages-per-dict NUM",
                 "Generate one shared JBIG2 dictionary per NUM pages.",
