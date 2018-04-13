@@ -101,4 +101,3 @@ module PDFBeads
   require 'pdfbeads/pdfbuilder'
   require 'pdfbeads/pdfpage'
 end
-

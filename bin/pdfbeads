@@ -35,7 +35,7 @@ require 'optparse'
 require 'iconv'
 require 'time'
 
-require 'pdfbeads'
+require_relative '../lib/pdfbeads'
 include PDFBeads
 
 pdfargs  = Hash[
