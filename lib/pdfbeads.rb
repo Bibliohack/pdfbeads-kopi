@@ -94,10 +94,10 @@ class String
   end
 end
 
-require 'imageinspector'
+require_relative './imageinspector'
 
 module PDFBeads
   VERSION = '1.0'
-  require 'pdfbeads/pdfbuilder'
-  require 'pdfbeads/pdfpage'
+  require_relative './pdfbeads/pdfbuilder'
+  require_relative './pdfbeads/pdfpage'
 end

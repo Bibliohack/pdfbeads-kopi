@@ -36,10 +36,10 @@ require 'stringio'
 
 # The key class where the actual generation of a PDF file is performed.
 class PDFBeads::PDFBuilder
-  require 'pdfbeads/pdfdoc'
-  require 'pdfbeads/pdffont'
-  require 'pdfbeads/pdflabels'
-  require 'pdfbeads/pdftoc'
+  require_relative './pdfdoc'
+  require_relative './pdffont'
+  require_relative './pdflabels'
+  require_relative './pdftoc'
 
   @@cmodes = Hash[
     'BilevelType'              => '/DeviceGray',
@@ -1035,4 +1035,3 @@ class PDFBeads::PDFBuilder
     return "#{x} 0 R"
   end
 end
-
